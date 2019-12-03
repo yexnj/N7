@@ -8,6 +8,11 @@ public class students implements Cloneable {
     public String kurator;
     public double sredniyball;
     public double[] zachotka;
+    !!!//короче в этой зачетке надо нахуярить всяких оценочек и добавить возможность редактировать их спс
+    //всю эту инфу затолкать в контрол.информ
+    //продублируй эту контрол.информ кнопку только в дубликате добавь как раз таки возможность изменять информацию
+    //у меня типо прога как для студента так и для деканата спс только вот я не реализовала еще разный вход
+    //поэтому пускай будет еще одна кнопка
 
 
     public String getName() { return name; }
@@ -28,4 +33,6 @@ public class students implements Cloneable {
         this.sredniyball = sredniyball;
         //this.sredniyball= s/zachotka.length;
     }
+
+
 }

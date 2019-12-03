@@ -20,7 +20,7 @@ public class Main extends Application {
         primaryStage.setMinWidth(400);
         primaryStage.setMinHeight(300);
         root = new FlowPane(Orientation.VERTICAL, 10, 10, tableview.table,tableview.l1,tableview.butt,tableview.delete,
-                tableview.refresh,tableview.search);
+                tableview.refresh,tableview.search,tableview.info);
         Scene scene = new Scene(root, 1050, 550);
         primaryStage.setScene(scene);
         root.getChildren().addAll(l2);

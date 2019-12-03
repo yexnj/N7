@@ -195,4 +195,36 @@ public class control {
         createWindow.setScene(scene);
         createWindow.show();
     }
+
+    public static void inform(students t1){
+        Stage createWindow = new Stage();
+        Pane root = new Pane();
+        Scene scene = new Scene(root);
+
+        Text title = new Text("Інформація про студента на ім'я "+t1.getName());
+        title.setFont(Font.font(16));
+        HBox titleContainer = new HBox(title);
+        titleContainer.setAlignment(Pos.TOP_CENTER);
+        title.setLayoutY(30);
+
+        Label name = new Label("Повне ім'я: \t\t"+t1.getName()+
+                "\nВік: \t\t\t\t" + t1.getAge() +
+                "\nГрупа: \t\t\t" +t1.getGruppa()+
+                "\nКурс: \t\t\t"+t1.getKurs()+
+                "\nКуратор: \t\t\t"+t1.getKurator()+
+                "\nСередній бал: \t"+t1.getSredniyball());
+        name.setFont(Font.font(14));
+        name.relocate(5,50);
+
+        Label zachotka = new Label();
+        короче вот тут должен быть массив с баллами
+
+        root.setMinWidth(400);
+        root.setMinHeight(300);
+        root.getChildren().addAll(title, name);
+        createWindow.setTitle("Інформація про студента");
+        createWindow.setResizable(false);
+        createWindow.setScene(scene);
+        createWindow.show();
+    }
 }

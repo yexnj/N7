@@ -19,6 +19,7 @@ public class tableview {
     public static Button butt;
     public static Button refresh;
     public static Button search;
+    public static Button info;
     public static ArrayList<students> st = new ArrayList<>();
     static ObservableList<students> people = FXCollections.observableArrayList(st);
     static TableView<students> table = new TableView<students>(people);
@@ -27,7 +28,7 @@ public class tableview {
         st.add(new students("Давиденко Ілля Сергійович", 17, "2ПІ-18б", 2, "Денисюк Алла Василівна", 4.2));
         st.add(new students("Богомазов Данил Вікторович", 18, "2ПІ-18б", 2, "Денисюк Алла Василівна", 3.6));
         st.add(new students("Симон Андрій Дмитрийович", 16, "2ПІ-18б", 2, "Денисюк Алла Василівна", 3.2));
-        st.add(new students("Ісаков Андрій ХХ", 18, "1ПІ-18б", 2, "Войтко Віктория Володимирівна", 4.8));
+        st.add(new students("Ісаков Андрій ХХ", 18, "1ПІ-18б", 2, "Войтко Вікторія Володимирівна", 4.8));
 
     }
 
@@ -49,6 +50,9 @@ public class tableview {
         search = new Button("Шукати студента");
         search.relocate(10,40);
         search.setOnAction(e -> control.search());
+
+        info = new Button("Вивести інформацію");
+        info.relocate(10,40);
 
         people = FXCollections.observableArrayList(st);
         table = new TableView<students>(people);
@@ -92,6 +96,7 @@ public class tableview {
             public void changed(ObservableValue<? extends students> observableValue, students students, students t1) {
                 if(t1 != null){
                     l1.setText("Вибрано: " + t1.getName());
+                    info.setOnAction(e -> control.inform(t1));
                     delete.setOnAction(e -> control.deletestudents(t1));
                 }
             }
